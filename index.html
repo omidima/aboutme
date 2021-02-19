@@ -1,0 +1,117 @@
+<div id="loader"></div>
+
+<section id="section-1">
+    <a href="#section-5">click</a>
+</section>
+<section id="section-2">
+
+</section>
+<section id="section-3">
+
+</section>
+<section id="section-4">
+
+</section>
+<section id="section-5">
+
+</section>
+
+<style>
+    html {
+        scroll-behavior: smooth;
+    }
+    body{
+        margin: 0;
+        padding:0;
+    }
+    #section-1{
+        background: red;
+    }
+    #section-2{
+        background: rgb(81, 255, 0);
+    }
+    #section-3{
+        background: rgb(0, 17, 255);
+    }
+    #section-4{
+        background: rgb(255, 0, 149);
+    }
+    #section-5{
+        background: rgb(0, 141, 141);
+    }
+    #loader{
+        position:fixed;
+        top:0;
+        left:0;
+        width:100%;
+        height:100%;
+        background:#663399;
+    }
+</style>
+<script>
+    var loading = {
+        elementLoadingId: "loader",
+        loadingShow: document.getElementById('loader').style.display = "",
+        loadingHide: document.getElementById('loader').style.display = "none",
+        ready: {
+            status : null ,
+            running : document.onreadystatechange = async function(){
+                if (document.readyState == "complete"){
+                    loading.ready.status = 200;
+                    loading.loadingHide
+                }
+            }
+        }
+    }
+
+    var pageControl = {
+        pageCount : 5,
+        pageActive : 0,
+        pageHeight : window.innerHeight,
+        elementSetStyleTagName : (tagName) => {
+            var el = document.getElementsByTagName(tagName);
+            for (i = 0; i < el.length; i++) {
+                el[i].style.height = pageControl.pageHeight + "px";
+            }
+        }
+    }
+
+    var position ={
+
+        positionAsElement: function (id)
+        {
+            return document.getElementById(id).offsetTop;
+        }
+        ,
+
+        scrollToTop: function()
+        {
+            scrollTo(0,0);
+        }
+        ,
+
+        positionAsTop : document.body.scrollTop
+        
+    }
+
+    var scrollLicener = {
+        current : 0,
+        newer : false,
+        scrollSpace: 500,
+        spcaeCheck: ()=>{
+            console.log(document.body.scrollTop - scrollLicener.current)
+            if(document.body.scrollTop-scrollLicener.current > scrollLicener.scrollSpace ||
+               document.body.scrollTop - scrollLicener.current < -scrollLicener.scrollSpace){
+                   
+                   scrollLicener.current = document.body.scrollTop;
+                   pageControl.pageActive++
+                   window.location.replace('#section-'+ pageControl.pageActive);
+            }
+        }
+        
+    }
+    document.addEventListener("scroll",scrollLicener.spcaeCheck);
+</script>
+<script>
+
+</script>
