@@ -1,8 +1,35 @@
 /* {mother elements} start */
 
+/* scrollbar  */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: rgb(0, 0, 0);
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #a9793a; 
+
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #ab916f; 
+}
+
 body{
     margin: 0;
     padding:0;
+}
+h1,h2,h3,h4,h5,h6{
+    font-family: 'titleFont';
+}
+p,span{
+    font-family: 'mainFont';
 }
 #section-1 {
     background: #585858;
@@ -72,6 +99,7 @@ body{
 .arrow-buttom {
     position: absolute;
     font-size: 26px;
+    display: grid;
     top: 50%;
     font-variant: all-small-caps;
     right: 5%;
@@ -80,6 +108,13 @@ body{
     color: currentcolor;
     font-weight: bolder;
 }
+
+.arrow-buttom p {
+    transform: rotate(-90deg);
+    color:#a9793a;
+    animation:tick2 5s linear 1.5s infinite alternate;
+}
+
 hr.line-down {
     height: 200px;
     background: #585858;
@@ -115,6 +150,7 @@ hr.line-down {
     animation: patterMove linear 50s infinite ;
     display: flex;
     align-items: center;
+    flex-shrink: 0;
 }
 
 .blur-effect {
@@ -132,13 +168,14 @@ hr.line-down {
 }
 
 .col-2 {
-    width: auto;
     overflow: hidden;
     height: 100%;
     background: url(../../assets/image/man.jpg)no-repeat;
     z-index: 1;
-    background-size: cover;
-    width: 100%;
+    background-size: 700px;
+    width: 50%;
+    background-attachment: fixed;
+    background-position: top right;
 }
 
 .col-2 img{
@@ -149,14 +186,100 @@ hr.line-down {
 .col-text-box {
     position: absolute;
     width: 90%;
-    top: 50%;
+    top: 60%;
     left: 30%;
     transform: translate(-20%,-50%);
     background: #1f1f1fc9;
     padding: 20px;
-    height: 50%;
+    height: 60%;
     border-radius: 3px;
     color: #fff;
     z-index: 2;
     box-shadow: -1px 1px 7px 1px #00000021;
+}
+
+/* topbar */
+.topbar {
+    display: grid;
+    grid-template-columns: 10% 20% 70%;
+    text-align: left;
+}
+
+.navbar ul {
+    display: grid;
+    list-style: none;
+    width: 100%;
+    margin-top: 21px;
+    grid-template-columns: 25% 25% 25% 25%;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+.logo-text {
+    font-variant: all-petite-caps;
+}
+.navbar-item {
+    color:#fff
+}
+
+
+
+/* responsive repository */
+@media (max-width:1050px){
+    .navbar ul {
+        padding-left: 0;
+    }
+    .navbar-item {
+        padding-right: 10px;
+    }
+    .topbar {
+        grid-template-rows: 10% 45% 33%;
+        grid-template-columns: 100%;
+        margin-left: 50px;
+    }
+    .col-2{
+        background-size: 600px;
+    }
+}
+
+@media (max-width:900px){
+
+    .col-2{
+        background-size: 500px;
+    }
+}
+
+@media (max-width:600px){
+
+    .col-2{
+        background:none;
+    }
+    #section-1 {
+        background: url(../../assets/image/man.jpg)no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        background-position: center top;
+    }
+    .topbar {
+        position: fixed;
+        grid-template-columns: 20% 60% 20%;
+        top: 0;
+        background: #000;
+        width: 100%;
+        z-index: 9999;
+        margin: 0;
+        grid-template-rows: none;
+    }
+    .navbar{
+        display: none;
+    }
+    .logo-text{
+        color: #fff;
+        text-align: center;
+    }
 }

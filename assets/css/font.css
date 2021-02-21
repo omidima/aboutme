@@ -1,0 +1,17 @@
+@font-face{
+    font-family: mainFont;
+    font-weight: normal;
+    src: url(../fonts/static/RobotoSlab-Regular.ttf);
+}
+
+@font-face{
+    font-family: titleFont;
+    font-weight: normal;
+    src: url(../fonts/libro//LibreBaskerville-Regular.ttf);
+}
+
+@font-face{
+    font-family: highFont;
+    font-weight: normal;
+    src: url(../fonts/teko/Teko-Regular.ttf);
+}

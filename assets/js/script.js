@@ -50,8 +50,7 @@ function sectionControll() {
     if (0 < re && re < 1) {
         document.getElementById('dots-' + pageCount).classList.toggle('active');
         document.getElementById('dots-1').classList.toggle('active');
-        a.style.marginTop = document.scrollingElement.scrollTop + "px";
-        pageCount = 1;
+    
     } else if (1 < re && re < 2) {
         a.style.marginTop = "0px";
         document.getElementById('dots-' + pageCount).classList.toggle('active');
