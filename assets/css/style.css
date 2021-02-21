@@ -192,7 +192,7 @@ hr.line-down {
     background: #1f1f1fc9;
     padding: 20px;
     height: 60%;
-    border-radius: 3px;
+    border: 1px solid #a9793a;
     color: #fff;
     z-index: 2;
     box-shadow: -1px 1px 7px 1px #00000021;
@@ -224,7 +224,7 @@ hr.line-down {
     font-variant: all-petite-caps;
 }
 .navbar-item {
-    color:#fff
+    color:#e2caab
 }
 
 
