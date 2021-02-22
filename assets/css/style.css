@@ -30,6 +30,7 @@ h1,h2,h3,h4,h5,h6{
 }
 p,span{
     font-family: 'mainFont';
+    line-height: 1.5;
 }
 #section-1 {
     background: #585858;
@@ -38,6 +39,7 @@ p,span{
 }
 #section-2{
     background: rgb(34, 34, 34);
+    overflow: hidden;
 }
 #section-3{
     background: rgb(0, 17, 255);
@@ -130,7 +132,19 @@ hr.line-down {
     left:0;
     width:100%;
     height:100%;
-    background:#663399;
+    background:#3a3a3a;
+    z-index: 3;
+    text-align: center; 
+}
+#texture {
+    position: absolute;
+    width: 50%;
+    top: 50%;
+    left: 50%;
+    color: #a9793a;
+    font-size: 60px;
+    font-family: 'highFont';
+    transform: translate(-50%,-50%);
 }
 
 /* patter name */
@@ -186,12 +200,12 @@ hr.line-down {
 .col-text-box {
     position: absolute;
     width: 90%;
-    top: 60%;
+    top: 55%;
     left: 30%;
     transform: translate(-20%,-50%);
     background: #1f1f1fc9;
     padding: 20px;
-    height: 60%;
+    height: 55%;
     border: 1px solid #a9793a;
     color: #fff;
     z-index: 2;
@@ -219,14 +233,23 @@ hr.line-down {
     width: 100%;
     padding: 0;
     margin: 0;
+    z-index: 2;
 }
 .logo-text {
     font-variant: all-petite-caps;
 }
 .navbar-item {
-    color:#e2caab
+    color:#e2caab;
+    transition: 0.2s;
 }
-
+.navbar-item:hover {
+    color:#fff;
+    transition: 0.2s;
+    font-size:20 px;
+    border-bottom: 2px;
+    border-color: #a9793a;
+    border-width: 2px;
+}
 
 
 /* responsive repository */
@@ -281,5 +304,18 @@ hr.line-down {
     .logo-text{
         color: #fff;
         text-align: center;
+    }
+    .col-text-box{
+        width: 70%;
+        top: 55%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        text-align: center;
+    }
+    .col-1{
+        min-width: 100%;
+    }
+    #texture{
+        font-size:42px;
     }
 }
