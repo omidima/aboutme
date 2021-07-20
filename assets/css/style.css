@@ -16,8 +16,45 @@
     color: #262626
 }
 
+.font-10{
+    font-size: 10px;
+}
 
+.font-12{
+    font-size: 12px;
+}
 
+.font-14{
+    font-size: 14px;
+}
+
+.font-16{
+    font-size: 16px;
+}
+
+.font-18{
+    font-size: 18px;
+}
+
+.font-20{
+    font-size: 20px;
+}
+
+.font-22{
+    font-size: 22px;
+}
+
+.font-24{
+    font-size: 24px;
+}
+
+.font-rem-3 {
+    font-size: 3rem;
+}
+
+small {
+    font-size: 8px;
+}
 
 /* scrollbar  */
 ::-webkit-scrollbar {
@@ -121,7 +158,7 @@ section {
 }
 .decore-photo{
     background: url(/home/omidima/Downloads/desk2.png) no-repeat right fixed;
-    background-size: auto;
+    background-size: contain;
 }
 
 /*  bootstrap edit */
@@ -146,15 +183,29 @@ section {
     text-align: center;
     padding: 10px;
     box-shadow: 0px 0px 10px 0px #26262620;
+    transition: 0.2s;
+    min-height: 300px;
+    display: grid;
+    align-items: center;
 }
-.flat-card img {
-    filter: invert(55%) sepia(9%) saturate(2634%) hue-rotate(354deg) brightness(88%) contrast(89%);
+.flat-card-icon {
+    text-align: center;
     padding: 10px;
-    border-radius: 50%;
-    border: 3px solid;
+    box-shadow: 0px 0px 10px 0px #26262620;
+    transition: 0.2s;
+    display: grid;
+    align-items: center;
+}
+.flat-card-icon .iconbox img {
+    width: 80px;
+}
+.flat-card-icon d-flex {
+    border-bottom: 2px solid #e0c3aa;
 }
 
-
+.iconbox {
+    text-align: center;
+}
 .iconbox span {
     background: #fff;
     width: 10px !important;
@@ -167,6 +218,34 @@ section {
     border-radius: 10px;
 }
 
-.iconbox {
+.iconbox img {
+    filter: invert(55%) sepia(9%) saturate(2634%) hue-rotate(354deg) brightness(88%) contrast(89%);
+    padding: 10px;
+    border-radius: 50%;
+    border: 3px solid;
     position: relative;
+}
+
+#section-3 .flat-card:hover{
+    box-shadow: 0px 0px 10px 0px #26262640;
+    transition: 0.2s;
+    transform: translateZ(10px);
+}
+
+
+@media (max-width: 768px){
+    .intro-image{
+        max-height: 400px;
+    }
+    .font-rem-3 {
+        font-size: 2rem;
+    }
+    .about-text {
+        display: grid;
+        text-align: center;
+    }
+}
+
+.container {
+    width: 80% !important;
 }

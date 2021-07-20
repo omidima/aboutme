@@ -26,12 +26,15 @@ for (i = 0; i < el.length; i++) {
 let active = 1;
 document.body.onscroll = () => {
     if (window.scrollY > 300) {
+        document.getElementById('section-2').setAttribute('style','opacity:1');
+        document.getElementById('section-2').classList.add('animate__animated');
+        document.getElementById('section-2').classList.add('animate__slideInUp');
+        active++
+    }
+    if (window.scrollY > 1000) {
         document.getElementById('section-3').setAttribute('style','opacity:1');
         document.getElementById('section-3').classList.add('animate__animated');
         document.getElementById('section-3').classList.add('animate__slideInUp');
         active++
     }
-    // if (window.scrollY > 400) {
-    //     document.getElementsByTagName('section')[1].classList.add('animate__animated animate__fadeIn');
-    // }
 }
