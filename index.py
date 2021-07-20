@@ -1,4 +1,4 @@
-r = int(input("r: "))
+ = int(input("r: "))
 print((r*2)**2)
 
 h=int(input("h: "))
